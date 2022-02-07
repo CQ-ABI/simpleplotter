@@ -2,3 +2,5 @@
 .*
 # Except .gitignore
 !.gitignore
+# Ignore generated png files
+*.png
