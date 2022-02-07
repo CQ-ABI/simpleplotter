@@ -1,7 +1,12 @@
 import matplotlib.pyplot as plt
-import numpy as np
+import argparse
 
-f = open("../data/example.csv")
+parser = argparse.ArgumentParser(description="Simple plot for GDBx data. Expects same measure_name, location, cause_name and metric_name in every line!")
+parser.add_argument('--infile', "-i", dest="infile", help='Input filename', required=True)
+parser.add_argument('--outfile', "-o", dest="outfile", help='Output png filename', required=True)
+args = parser.parse_args()
+
+f = open(args.infile)
 lines = [x.strip().split(",") for x in f.readlines()[1:]]
 f.close()
 
@@ -22,4 +27,4 @@ ax.set(xlabel="Year", ylabel=what + " (" + how + ")", title=what + " (" + how + 
 ax.set_xticklabels(labels=years, rotation=45)
 fig.set_figwidth(10)
 fig.set_figheight(10)
-fig.savefig("plot.png")
+fig.savefig(args.outfile)
