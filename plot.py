@@ -10,6 +10,8 @@ f = open(args.infile)
 lines = [x.strip().split(",") for x in f.readlines()[1:]]
 f.close()
 
+TODO: Get names of what/how/why/where from header instead of magic numbers
+
 what = lines[0][1]
 how = lines[0][11]
 why = lines[0][9]
