@@ -1,0 +1,4 @@
+# Ignore all temporary editor files
+.*
+# Except .gitignore
+!.gitignore
