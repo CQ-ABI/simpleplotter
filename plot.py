@@ -20,7 +20,6 @@ data.sort(key = lambda x: x[0])
 
 years = [x[0] for x in data]
 vals = [float(x[1]) for x in data]
-print(vals)
 fig, ax = plt.subplots()
 ax.plot(years, vals)
 ax.set(xlabel="Year", ylabel=what + " (" + how + ")", title=what + " (" + how + ") due to " + why + " in " + where)
